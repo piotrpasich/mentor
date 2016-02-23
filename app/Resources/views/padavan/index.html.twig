@@ -1,0 +1,32 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Padavan list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Skills</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for padavan in padavans %}
+            <tr>
+                <td>{{ padavan.id }}</td>
+                <td>{{ padavan.name }}</td>
+                <td>{{ padavan.email }}</td>
+                <td>{{ padavan.skills }}</td>
+                <td>
+                    <a href="{{ path('padavan_edit', { 'id': padavan.id }) }}" class="btn btn-info">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

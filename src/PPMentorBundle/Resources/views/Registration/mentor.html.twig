@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>
+                    Help with unleashing superpowers!
+                </h1>
+                <h2>
+                    Find your own Mr. Miyagi inside you. Become a Jedi, a Ninja-Master, the sensei. (Kuba help with this text :D).
+                </h2>
+
+                <p>
+                    WAX ON, WAX OFF!
+                </p>
+
+                {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+                <div class="register">
+                    {% for flash_message in app.session.flashbag.get('notice') %}
+                        <div class="flash-notice alert alert-info">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <input type="submit" class="btn btn-success" value="Become a Mentor"/>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block footer_button %}
+    <div class="container container-become-mentor">
+        <a href="{{ path('landing_page') }}" class="alert alert-info">Go back to main page</a>
+    </div>
+{% endblock %}

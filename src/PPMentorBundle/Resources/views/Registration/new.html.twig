@@ -1,0 +1,12 @@
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+<div class="register">
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="flash-notice alert alert-info">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-success" value="Ask for a Mentor"/>
+    {{ form_end(form) }}
+</div>

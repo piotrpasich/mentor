@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>
+                    Unleash your superpowers with the help of X-Teamers.
+                </h1>
+                <h2>
+                    Find your own Mr. Miyagi and see if this very old saying stays true: when the pupil is ready, the master appears.
+                </h2>
+
+                <p>
+                    WAX ON, WAX OFF!
+                </p>
+
+                {{ include("PPMentorBundle:Registration:new.html.twig", { 'form' : form, 'padavan': padavan }) }}
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <h1 class="title-mentors">Mentors</h1>
+        {% for mentor in mentors %}
+            <hr class="featurette-divider">
+
+            <!-- First Featurette -->
+            <div class="featurette mentor" id="">
+                <img class="featurette-image img-circle img-responsive pull-{{ cycle(['left', 'right'], loop.index0) }}" src="{{ asset('images/' ~ mentor.id ~ '.png') }}"> {# the image name is shitty #}
+
+                <h2 class="featurette-heading">{{ mentor.name }}</h2>
+                <p class="skills">
+                    {% for skill in mentor.skills|split(',') %}
+                        <span class="alert alert-info">{{ skill }}</span>
+                    {% endfor %}
+                </p>
+
+                <p class="lead">
+                    {{ mentor.info }}
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+    <!-- /.container -->
+{% endblock %}

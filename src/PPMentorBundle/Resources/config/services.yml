@@ -1,0 +1,4 @@
+services:
+#    pp_mentor.example:
+#        class: PPMentorBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
