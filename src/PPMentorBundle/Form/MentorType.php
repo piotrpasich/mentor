@@ -19,6 +19,7 @@ class MentorType extends AbstractType
             ->add('skills')
             ->add('info')
             ->add('email')
+            ->add('file')
             ->add('approved')
         ;
     }

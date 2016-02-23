@@ -177,4 +177,12 @@ class Mentor
     {
         $this->email = $email;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

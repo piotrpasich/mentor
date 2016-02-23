@@ -30,7 +30,7 @@
 
             <!-- First Featurette -->
             <div class="featurette mentor" id="">
-                <img class="featurette-image img-circle img-responsive pull-{{ cycle(['left', 'right'], loop.index0) }}" src="{{ asset('images/' ~ mentor.id ~ '.png') }}"> {# the image name is shitty #}
+                <img class="featurette-image mentor-image-profile img-circle img-responsive pull-{{ cycle(['left', 'right'], loop.index0) }}" src="{{ asset(mentor.getWebPath()) }}"> {# the image name is shitty #}
 
                 <h2 class="featurette-heading">{{ mentor.name }}</h2>
                 <p class="skills">

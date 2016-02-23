@@ -37,7 +37,7 @@ class RegistrationController extends Controller
         return [
             'padavan' => $padavan,
             'form' => $form->createView(),
-            'mentors' => $this->getDoctrine()->getRepository("PPMentorBundle:Mentor")->findAll(),
+            'mentors' => $this->getDoctrine()->getRepository("PPMentorBundle:Mentor")->findByApproved(true),
         ];
     }
 

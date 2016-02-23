@@ -50,6 +50,7 @@ class MentorController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $mentor->upload();
             $em->persist($mentor);
             $em->flush();
 
@@ -82,6 +83,7 @@ class MentorController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $mentor->upload();
             $em->persist($mentor);
             $em->flush();
 

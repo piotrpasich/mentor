@@ -7,9 +7,11 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th></th>
                 <th>Name</th>
                 <th>Skills</th>
                 <th>Info</th>
+                <th>Approved</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -17,9 +19,15 @@
         {% for mentor in mentors %}
             <tr>
                 <td>{{ mentor.id }}</td>
+                <td>
+                    {% if mentor.image %}
+                        <img src="{{ asset(mentor.getWebPath()) }}" style="height: 90px;"/>
+                    {% endif %}
+                </td>
                 <td>{{ mentor.name }}</td>
                 <td>{{ mentor.skills }}</td>
                 <td>{{ mentor.info }}</td>
+                <td>{{ mentor.approved|boolean }}</td>
                 <td>
                     <a href="{{ path('admin_mentor_edit', { 'id': mentor.id }) }}" class="btn btn-info">edit</a>
                 </td>
