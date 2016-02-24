@@ -55,7 +55,6 @@ class RegisterMentorType extends AbstractType
             'csrf_field_name' => '_token',
             // a unique key to help generate the secret token
             'csrf_token_id'   => 'mentor',
-
         ));
     }
 }
