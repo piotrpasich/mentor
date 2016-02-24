@@ -39,7 +39,11 @@ class PadavanType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'PPMentorBundle\Entity\Padavan'
+            'data_class' => 'PPMentorBundle\Entity\Padavan',
+            'csrf_protection' => true,
+            'csrf_field_name' => '_token',
+            // a unique key to help generate the secret token
+            'csrf_token_id'   => 'padalan',
         ));
     }
 }
