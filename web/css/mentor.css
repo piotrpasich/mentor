@@ -88,3 +88,8 @@ h1.title-mentors {
     text-align: center;
     display: block;
 }
+
+.mentor-image-profile {
+    width: 500px;
+    max-height: 500px;
+}
