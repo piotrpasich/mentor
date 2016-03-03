@@ -23,20 +23,23 @@ body {
     padding: 60px 0;
 }
 
-.headline h1 ,
-.headline h2 ,
-.headline p ,
+.headline h1,
+.headline h2,
+.headline p,
 .headline .register {
-    width:50%;
+    width: 50%;
 }
+
 .headline h1 {
     font-size: 35px;
 }
-.headline h2 ,
+
+.headline h2,
 .headline p {
     font-size: 20px;
     text-align: center;
 }
+
 .headline p {
     margin-top: 30px;
 }
@@ -45,6 +48,7 @@ body {
     width: 40%;
     margin: 5%;
 }
+
 .headline .register .col-sm-10 {
     width: 100%;
 }
@@ -52,11 +56,14 @@ body {
 .headline .register label {
     display: none;
 }
+
 .headline .register input {
     width: 100%;
     height: 44px;
 }
+
 .headline .register input[type=text],
+.headline .register input[type=email],
 .headline .register textarea {
     background: #ECECEC;
 }
@@ -66,10 +73,11 @@ body {
     margin: 0px 0px 20px 0;
 }
 
-
 .mentor .skills {
     margin: 30px 0px;
+    line-height: 46px;
 }
+
 .mentor .skills span {
     padding: 10px;
 }
@@ -80,6 +88,7 @@ h1.title-mentors {
     font-weight: 100;
     margin-bottom: -80px;
 }
+
 .container-become-mentor {
     width: 100%;
     height: 50px;
@@ -90,6 +99,27 @@ h1.title-mentors {
 }
 
 .mentor-image-profile {
-    width: 500px;
-    max-height: 500px;
+    width: 300px;
+    max-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .headline h1, .headline h2, .headline p, .headline .register {
+        width: 90%;
+    }
+
+    h1.title-mentors {
+        margin-bottom: 20px;
+    }
+
+    .mentor .skills {
+        margin: 30px 0px;
+        line-height: 46px;
+        display: block;
+        clear: both;
+    }
+
+    .container-become-mentor {
+        font-size: 20px;
+    }
 }

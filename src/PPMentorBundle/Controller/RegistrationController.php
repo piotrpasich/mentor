@@ -22,6 +22,7 @@ class RegistrationController extends Controller
         $form->handleRequest($originalRequest);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if ('' !== $originalRequest->request->get('address')) die('ok');
             $em = $this->getDoctrine()->getManager();
             $em->persist($padavan);
             $em->flush();
