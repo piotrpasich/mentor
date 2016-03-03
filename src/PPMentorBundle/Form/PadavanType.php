@@ -27,7 +27,7 @@ class PadavanType extends AbstractType
             ])
             ->add('skills', null, [
                 'attr' => [
-                    'placeholder' =>  "Skills",
+                    'placeholder' =>  "Skills you’d like to master",
                 ],
             ])
         ;
