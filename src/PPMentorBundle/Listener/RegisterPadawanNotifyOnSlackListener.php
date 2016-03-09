@@ -24,12 +24,22 @@ class RegisterPadawanNotifyOnSlackListener
     public function notify(PadawanRegisteredEvent $padawanRegisteredEvent)
     {
         $padawan = $padawanRegisteredEvent->getPadawan();
-        $text = "Greeting Heroes! New padawan just registered. \n" .
-                "{$padawan->getName()}({$padawan->getEmail()}) with {$padawan->getSkills()} skills. ";
+        $firstName = strpos($padawan->getName(), ' ') !== false ?
+            substr($padawan->getName(), 0, strpos($padawan->getName(), ' ') + 1) :
+            $padawan->getName();
+
+        $text = "<!group>: Another Daniel-san is looking for a Mr. Miyagi!\n" .
+                "\n" .
+                "Name: *{$padawan->getName()}​*\n" .
+                "E-mail: *​{$padawan->getEmail()}*​\n" .
+                "Skills to learn/improve: ​*{$padawan->getSkills()}*​\n" .
+                "\n" .
+                "Who will teach ​*{$firstName}*​ how to WAX ON, WAX OFF?\n" .
+                "\n" ;
 
         $payload = json_encode([
             "text" => $text,
-            "username" => "Miyagi",
+            "username" => "MENTOR REQUEST",
             "icon_url" => "http://cdn.meme.am/images/60x60/11603508.jpg"
         ]);
 
