@@ -1,7 +1,7 @@
 {% extends 'admin.html.twig' %}
 {% form_theme edit_form 'bootstrap_3_horizontal_layout.html.twig' %}
 {% block body %}
-    <h1>Padavan edit</h1>
+    <h1>Padawan edit</h1>
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
@@ -9,7 +9,7 @@
     {{ form_end(edit_form) }}
 
     <hr/>
-        <a href="{{ path('padavan_index') }}"  class="btn btn-info">Back to the list</a>
+        <a href="{{ path('padawan_index') }}"  class="btn btn-info">Back to the list</a>
         {{ form_start(delete_form) }}
                 <input type="submit" value="Delete"  class="btn btn-danger">
             {{ form_end(delete_form) }}

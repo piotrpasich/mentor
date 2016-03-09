@@ -3,7 +3,8 @@
 namespace PPMentorBundle\Controller;
 
 use PPMentorBundle\Entity\Mentor;
-use PPMentorBundle\Entity\Padavan;
+use PPMentorBundle\Entity\Padawan;
+use PPMentorBundle\Event\PadawanRegisteredEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,14 +18,14 @@ class RegistrationController extends Controller
      */
     public function indexAction(Request $originalRequest)
     {
-        $padavan = new Padavan();
-        $form    = $this->createForm('PPMentorBundle\Form\PadavanType', $padavan);
+        $padawan = new Padawan();
+        $form    = $this->createForm('PPMentorBundle\Form\PadawanType', $padawan);
         $form->handleRequest($originalRequest);
 
         if ($form->isSubmitted() && $form->isValid()) {
             if ('' !== $originalRequest->request->get('address')) die('ok');
             $em = $this->getDoctrine()->getManager();
-            $em->persist($padavan);
+            $em->persist($padawan);
             $em->flush();
 
             $this->addFlash(
@@ -32,11 +33,13 @@ class RegistrationController extends Controller
                 'You have successfully registerd!'
             );
 
+            $this->get('event_dispatcher')->dispatch('pp.padawan_regstered', new PadawanRegisteredEvent($padawan));
+
             return $this->redirectToRoute('landing_page');
         }
 
         return [
-            'padavan' => $padavan,
+            'padawan' => $padawan,
             'form' => $form->createView(),
             'mentors' => $this->getDoctrine()->getRepository("PPMentorBundle:Mentor")->findByApproved(true),
         ];
@@ -63,7 +66,7 @@ class RegistrationController extends Controller
                 'You have successfully registerd as a Mentor!'
             );
 
-//            return $this->redirectToRoute('register_mentor');
+            return $this->redirectToRoute('register_mentor');
         }
 
         return [

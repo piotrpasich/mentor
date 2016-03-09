@@ -7,3 +7,12 @@ services:
       public: false
       tags:
           - { name: twig.extension }
+
+  pp_mentor.listener:
+      class: PPMentorBundle\Listener\RegisterPadawanNotifyOnSlackListener
+      arguments:
+          - '@circle.restclient'
+          - '%slack_hook_url%'
+      tags:
+          - { name: kernel.event_listener, event: pp.padawan_regstered, method: notify }
+

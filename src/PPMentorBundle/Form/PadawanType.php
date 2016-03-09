@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PadavanType extends AbstractType
+class PadawanType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -39,7 +39,7 @@ class PadavanType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'PPMentorBundle\Entity\Padavan',
+            'data_class' => 'PPMentorBundle\Entity\Padawan',
             'csrf_protection' => true,
             'csrf_field_name' => '_token',
             // a unique key to help generate the secret token

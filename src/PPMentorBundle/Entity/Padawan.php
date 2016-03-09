@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Padavan
+ * Padawan
  *
- * @ORM\Table(name="padavan")
- * @ORM\Entity(repositoryClass="PPMentorBundle\Repository\PadavanRepository")
+ * @ORM\Table(name="padawan")
+ * @ORM\Entity(repositoryClass="PPMentorBundle\Repository\PadawanRepository")
  */
-class Padavan
+class Padawan
 {
     /**
      * @var int
@@ -67,7 +67,7 @@ class Padavan
      *
      * @param string $name
      *
-     * @return Padavan
+     * @return Padawan
      */
     public function setName($name)
     {
@@ -91,7 +91,7 @@ class Padavan
      *
      * @param string $email
      *
-     * @return Padavan
+     * @return Padawan
      */
     public function setEmail($email)
     {
@@ -115,7 +115,7 @@ class Padavan
      *
      * @param string $skills
      *
-     * @return Padavan
+     * @return Padawan
      */
     public function setSkills($skills)
     {

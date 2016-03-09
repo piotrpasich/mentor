@@ -1,7 +1,7 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Padavan list</h1>
+    <h1>Padawans list</h1>
 
     <table class="table">
         <thead>
@@ -14,14 +14,14 @@
             </tr>
         </thead>
         <tbody>
-        {% for padavan in padavans %}
+        {% for padawan in padawans %}
             <tr>
-                <td>{{ padavan.id }}</td>
-                <td>{{ padavan.name }}</td>
-                <td>{{ padavan.email }}</td>
-                <td>{{ padavan.skills }}</td>
+                <td>{{ padawan.id }}</td>
+                <td>{{ padawan.name }}</td>
+                <td>{{ padawan.email }}</td>
+                <td>{{ padawan.skills }}</td>
                 <td>
-                    <a href="{{ path('padavan_edit', { 'id': padavan.id }) }}" class="btn btn-info">edit</a>
+                    <a href="{{ path('padawan_edit', { 'id': padawan.id }) }}" class="btn btn-info">edit</a>
                 </td>
             </tr>
         {% endfor %}

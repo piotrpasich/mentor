@@ -4,7 +4,7 @@ namespace PPMentorBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class PadavanControllerTest extends WebTestCase
+class PadawanControllerTest extends WebTestCase
 {
     /*
     public function testCompleteScenario()
@@ -13,13 +13,13 @@ class PadavanControllerTest extends WebTestCase
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/padavan/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /padavan/");
+        $crawler = $client->request('GET', '/padawan/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /padawan/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
 
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'ppmentorbundle_padavan[field_name]'  => 'Test',
+            'ppmentorbundle_padawan[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -33,7 +33,7 @@ class PadavanControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Update')->form(array(
-            'ppmentorbundle_padavan[field_name]'  => 'Foo',
+            'ppmentorbundle_padawan[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 

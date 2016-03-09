@@ -74,3 +74,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: PPMentorBundle\Entity\User
+
+circle_rest_client:
+    curl:
+      defaults:
+        CURLOPT_HTTPHEADER:     [ 'Content-Type: application/json' ]
+        CURLOPT_FOLLOWLOCATION: true
